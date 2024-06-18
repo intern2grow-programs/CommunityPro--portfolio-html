@@ -168,6 +168,10 @@ h2::selection {
   background: url(../assets/project/project-six.png) center center/cover;
 }
 
+.prevent-select {
+  user-select: none;
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
   .header-container {
