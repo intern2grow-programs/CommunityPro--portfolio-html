@@ -37,6 +37,8 @@ toggleSwitch.addEventListener("change", switchTheme, false);
 
 // Save user preference on load
 
+const prefersDarkColorScheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
 const currentTheme = localStorage.getItem("theme")
   ? localStorage.getItem("theme")
   : null;
@@ -47,6 +49,9 @@ if (currentTheme) {
   if (currentTheme === "dark") {
     toggleSwitch.checked = true;
   }
+} else if (prefersDarkColorScheme) {
+  document.documentElement.setAttribute("data-theme", "dark");
+  toggleSwitch.checked = true;
 }
 
 //Adding date
